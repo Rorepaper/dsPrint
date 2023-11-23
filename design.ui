@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>501</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Принтер этикеток</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    font: 8pt &quot;Calibri&quot;;
+}
+
+QWidget#centralwidget {
+    background-image: url(bg.jpg);
+}
+
+QLabel {
+    font: 25pt &quot;Calibri&quot;;
+    color: black;
+}
+
+QPushButton {
+    background-color: qlineargradient(spread:pad,
+    x1: 0.29,
+    y1: 0.471909,
+    x2: 0.931818,
+    y2: 0.227,
+    stop: 0 rgba(109, 0, 180, 255),
+    stop: 1 rgba(41, 147, 255, 255));
+    border-radius: 10px;
+    border: 3px solid rgb(0, 210, 233);
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    transition: all .5s;
+}
+
+QPushButton:pressed {
+    background-color: #000;
+    border-style: inset;
+}
+
+QComboBox {
+    background-color: qlineargradient(spread:pad,
+    x1: 0.29,
+    y1: 0.471909,
+    x2: 0.931818,
+    y2: 0.227,
+    stop: 0 rgba(109, 0, 180, 255),
+    stop: 1 rgba(41, 147, 255, 255));
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    transition: all .5s;
+    border: 3px solid rgb(0, 210, 233);
+}
+
+
+QComboBox:editable {
+    background-color: qlineargradient(spread:pad,
+    x1: 0.29,
+    y1: 0.471909,
+    x2: 0.931818,
+    y2: 0.227,
+    stop: 0 rgba(109, 0, 180, 255),
+    stop: 1 rgba(41, 147, 255, 255));
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+    background-color: qlineargradient(spread:pad,
+    x1: 0.29,
+    y1: 0.471909,
+    x2: 0.931818,
+    y2: 0.227,
+    stop: 0 rgba(109, 0, 180, 255),
+    stop: 1 rgba(41, 147, 255, 255));
+}
+
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background-color: qlineargradient(spread:pad,
+    x1: 0.29,
+    y1: 0.471909,
+    x2: 0.931818,
+    y2: 0.227,
+    stop: 0 rgba(109, 0, 180, 255),
+    stop: 1 rgba(41, 147, 255, 255));
+}
+
+QComboBox:on {
+    padding-top: 3px;
+    padding-left: 4px;
+}
+
+QLineEdit {
+    padding: 5px;
+    font-family: Arial;
+    font-size: 18pt;
+    border: none;
+    outline: none;
+    text-align: center;
+    border-bottom: 5px solid qlineargradient(spread:pad,
+    x1: 0.29,
+    y1: 0.471909,
+    x2: 0.931818,
+    y2: 0.227,
+    stop: 0 rgba(109, 0, 180, 255),
+    stop: 1 rgba(41, 147, 255, 255));
+}
+
+
+QComboBox::down-arrow:on {
+    top: 1px;
+    left: 1px;
+}
+
+
+QComboBox:select {
+    background-color: qlineargradient(spread:pad,
+    x1: 0.29,
+    y1: 0.471909,
+    x2: 0.931818,
+    y2: 0.227,
+    stop: 0 rgba(109, 0, 180, 255),
+    stop: 1 rgba(41, 147, 255, 255));
+    border-style: inset;
+}
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="horizontalWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>400</y>
+      <width>610</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+     <property name="leftMargin">
+      <number>1</number>
+     </property>
+     <property name="rightMargin">
+      <number>5</number>
+     </property>
+     <item>
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="inputMask">
+        <string/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="placeholderText">
+        <string>Введите MAC адрес</string>
+       </property>
+       <property name="clearButtonEnabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>-1</pointsize>
+         <weight>62</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">  border-radius: 0px; padding-top:1.7;</string>
+       </property>
+       <property name="text">
+        <string>MAC</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalWidget_2" native="true">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>70</y>
+      <width>601</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+      <horstretch>2</horstretch>
+      <verstretch>2</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {padding:30px;font-size: 45px;}</string>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0">
+     <property name="spacing">
+      <number>100</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>-1</pointsize>
+         <weight>62</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>ПЕЧАТЬ</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>1</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>-1</pointsize>
+         <weight>62</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>ТЕСТ</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>250</y>
+      <width>311</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>-1</pointsize>
+      <weight>62</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Поменять длину</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>10</y>
+      <width>181</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>-1</pointsize>
+      <weight>62</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Помощь</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>191</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="currentText">
+     <string>Выбор COM</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Выбор COM</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>310</y>
+      <width>601</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(img.png);border: 3px solid rgb(0, 210, 233);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
