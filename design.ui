@@ -7,11 +7,33 @@
     <x>0</x>
     <y>0</y>
     <width>700</width>
-    <height>501</height>
+    <height>500</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>700</width>
+    <height>500</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Принтер этикеток</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="img.qrc">
+    <normaloff>:/icon</normaloff>:/icon</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget {
@@ -19,7 +41,8 @@
 }
 
 QWidget#centralwidget {
-    background-image: url(bg.jpg);
+
+    background-image: url(:/bg);
 }
 
 QLabel {
@@ -37,13 +60,10 @@ QPushButton {
     stop: 1 rgba(41, 147, 255, 255));
     border-radius: 10px;
     border: 3px solid rgb(0, 210, 233);
-    box-sizing: border-box;
     color: #FFFFFF;
-    cursor: pointer;
-    font-size: 30px;
+    font-size: 23pt;
     font-weight: 500;
     text-align: center;
-    transition: all .5s;
 }
 
 QPushButton:pressed {
@@ -60,13 +80,10 @@ QComboBox {
     stop: 0 rgba(109, 0, 180, 255),
     stop: 1 rgba(41, 147, 255, 255));
     border-radius: 8px;
-    box-sizing: border-box;
     color: #FFFFFF;
-    cursor: pointer;
-    font-size: 30px;
+    font-size: 23pt;
     font-weight: 500;
     text-align: center;
-    transition: all .5s;
     border: 3px solid rgb(0, 210, 233);
 }
 
@@ -143,6 +160,9 @@ QComboBox:select {
 
 </string>
   </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Triangular</enum>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="horizontalWidget" native="true">
     <property name="geometry">
@@ -171,6 +191,9 @@ QComboBox:select {
      </property>
      <item>
       <widget class="QLineEdit" name="lineEdit">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="styleSheet">
         <string notr="true"/>
        </property>
@@ -193,10 +216,13 @@ QComboBox:select {
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_4">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="font">
         <font>
          <family>Calibri</family>
-         <pointsize>-1</pointsize>
+         <pointsize>23</pointsize>
          <weight>62</weight>
          <italic>false</italic>
          <bold>true</bold>
@@ -218,9 +244,9 @@ QComboBox:select {
     </property>
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>40</x>
       <y>70</y>
-      <width>601</width>
+      <width>621</width>
       <height>181</height>
      </rect>
     </property>
@@ -231,18 +257,18 @@ QComboBox:select {
      </sizepolicy>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton {padding:30px;font-size: 45px;}</string>
+     <string notr="true">QPushButton {padding:30px;font-size: 40pt;}</string>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0">
      <property name="spacing">
-      <number>100</number>
+      <number>105</number>
      </property>
      <item>
       <widget class="QPushButton" name="pushButton">
        <property name="font">
         <font>
          <family>Calibri</family>
-         <pointsize>-1</pointsize>
+         <pointsize>40</pointsize>
          <weight>62</weight>
          <italic>false</italic>
          <bold>true</bold>
@@ -267,7 +293,7 @@ QComboBox:select {
        <property name="font">
         <font>
          <family>Calibri</family>
-         <pointsize>-1</pointsize>
+         <pointsize>40</pointsize>
          <weight>62</weight>
          <italic>false</italic>
          <bold>true</bold>
@@ -289,16 +315,16 @@ QComboBox:select {
     </property>
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>195</x>
       <y>250</y>
-      <width>311</width>
+      <width>301</width>
       <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Calibri</family>
-      <pointsize>-1</pointsize>
+      <pointsize>23</pointsize>
       <weight>62</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -314,8 +340,8 @@ QComboBox:select {
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>10</y>
+      <x>530</x>
+      <y>-100</y>
       <width>181</width>
       <height>71</height>
      </rect>
@@ -323,7 +349,7 @@ QComboBox:select {
     <property name="font">
      <font>
       <family>Calibri</family>
-      <pointsize>-1</pointsize>
+      <pointsize>23</pointsize>
       <weight>62</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -336,36 +362,87 @@ QComboBox:select {
      <string>Помощь</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>191</width>
-      <height>71</height>
+      <x>800</x>
+      <y>370</y>
+      <width>601</width>
+      <height>101</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">background-image: url(:/label);border: 3px solid rgb(0, 210, 233);</string>
     </property>
-    <property name="editable">
-     <bool>false</bool>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
     </property>
-    <property name="currentText">
-     <string>Выбор COM</string>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
     </property>
-    <item>
-     <property name="text">
-      <string>Выбор COM</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string/>
-     </property>
-    </item>
    </widget>
-   <widget class="QFrame" name="frame">
+   <widget class="QWidget" name="horizontalWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>661</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {padding:8px;} QComboBox {padding:8px;}</string>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <property name="spacing">
+      <number>30</number>
+     </property>
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
+     <item>
+      <widget class="QComboBox" name="comboBox">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="editable">
+        <bool>false</bool>
+       </property>
+       <property name="currentText">
+        <string>COM MARK</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>COM MARK</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="styleSheet">
+        <string notr="true">font-size: 17pt; padding: 13</string>
+       </property>
+       <property name="text">
+        <string>ОБНОВИТЬ COM</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="text">
+        <string>ПОМОЩЬ</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -375,17 +452,19 @@ QComboBox:select {
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(img.png);border: 3px solid rgb(0, 210, 233);</string>
+     <string notr="true">background-image: url(:/label);border: 3px solid rgb(0, 210, 233);</string>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+    <property name="text">
+     <string/>
     </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="img.qrc"/>
+ </resources>
  <connections/>
 </ui>

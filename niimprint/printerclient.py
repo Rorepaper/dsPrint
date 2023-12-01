@@ -1,4 +1,4 @@
-import niimbotpacket
+from niimprint import niimbotpacket
 import socket
 import struct
 import time

@@ -14,13 +14,24 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(700, 501)
+        MainWindow.resize(700, 500)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
+        MainWindow.setSizePolicy(sizePolicy)
+        MainWindow.setMinimumSize(QtCore.QSize(700, 500))
+        MainWindow.setMaximumSize(QtCore.QSize(700, 500))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icon"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("QWidget {\n"
 "    font: 8pt \"Calibri\";\n"
 "}\n"
 "\n"
 "QWidget#centralwidget {\n"
-"    background-image: url(bg.jpg);\n"
+"\n"
+"    background-image: url(:/bg);\n"
 "}\n"
 "\n"
 "QLabel {\n"
@@ -38,13 +49,10 @@ class Ui_MainWindow(object):
 "    stop: 1 rgba(41, 147, 255, 255));\n"
 "    border-radius: 10px;\n"
 "    border: 3px solid rgb(0, 210, 233);\n"
-"    box-sizing: border-box;\n"
 "    color: #FFFFFF;\n"
-"    cursor: pointer;\n"
-"    font-size: 30px;\n"
+"    font-size: 23pt;\n"
 "    font-weight: 500;\n"
 "    text-align: center;\n"
-"    transition: all .5s;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -61,13 +69,10 @@ class Ui_MainWindow(object):
 "    stop: 0 rgba(109, 0, 180, 255),\n"
 "    stop: 1 rgba(41, 147, 255, 255));\n"
 "    border-radius: 8px;\n"
-"    box-sizing: border-box;\n"
 "    color: #FFFFFF;\n"
-"    cursor: pointer;\n"
-"    font-size: 30px;\n"
+"    font-size: 23pt;\n"
 "    font-weight: 500;\n"
 "    text-align: center;\n"
-"    transition: all .5s;\n"
 "    border: 3px solid rgb(0, 210, 233);\n"
 "}\n"
 "\n"
@@ -143,6 +148,7 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "")
+        MainWindow.setTabShape(QtWidgets.QTabWidget.Triangular)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalWidget = QtWidgets.QWidget(self.centralwidget)
@@ -155,6 +161,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.lineEdit = QtWidgets.QLineEdit(self.horizontalWidget)
+        self.lineEdit.setEnabled(True)
         self.lineEdit.setStyleSheet("")
         self.lineEdit.setInputMask("")
         self.lineEdit.setText("")
@@ -163,9 +170,10 @@ class Ui_MainWindow(object):
         self.lineEdit.setObjectName("lineEdit")
         self.horizontalLayout.addWidget(self.lineEdit)
         self.pushButton_4 = QtWidgets.QPushButton(self.horizontalWidget)
+        self.pushButton_4.setEnabled(True)
         font = QtGui.QFont()
         font.setFamily("Calibri")
-        font.setPointSize(-1)
+        font.setPointSize(23)
         font.setBold(True)
         font.setItalic(False)
         font.setWeight(62)
@@ -175,22 +183,22 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.pushButton_4)
         self.horizontalWidget_2 = QtWidgets.QWidget(self.centralwidget)
         self.horizontalWidget_2.setEnabled(True)
-        self.horizontalWidget_2.setGeometry(QtCore.QRect(50, 70, 601, 181))
+        self.horizontalWidget_2.setGeometry(QtCore.QRect(40, 70, 621, 181))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(2)
         sizePolicy.setVerticalStretch(2)
         sizePolicy.setHeightForWidth(self.horizontalWidget_2.sizePolicy().hasHeightForWidth())
         self.horizontalWidget_2.setSizePolicy(sizePolicy)
-        self.horizontalWidget_2.setStyleSheet("QPushButton {padding:30px;font-size: 45px;}")
+        self.horizontalWidget_2.setStyleSheet("QPushButton {padding:30px;font-size: 40pt;}")
         self.horizontalWidget_2.setObjectName("horizontalWidget_2")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.horizontalWidget_2)
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_2.setSpacing(100)
+        self.horizontalLayout_2.setSpacing(105)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.pushButton = QtWidgets.QPushButton(self.horizontalWidget_2)
         font = QtGui.QFont()
         font.setFamily("Calibri")
-        font.setPointSize(-1)
+        font.setPointSize(40)
         font.setBold(True)
         font.setItalic(False)
         font.setWeight(62)
@@ -206,7 +214,7 @@ class Ui_MainWindow(object):
         self.pushButton_2.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Calibri")
-        font.setPointSize(-1)
+        font.setPointSize(40)
         font.setBold(True)
         font.setItalic(False)
         font.setWeight(62)
@@ -216,10 +224,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.pushButton_2)
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_3.setEnabled(True)
-        self.pushButton_3.setGeometry(QtCore.QRect(200, 250, 311, 41))
+        self.pushButton_3.setGeometry(QtCore.QRect(195, 250, 301, 41))
         font = QtGui.QFont()
         font.setFamily("Calibri")
-        font.setPointSize(-1)
+        font.setPointSize(23)
         font.setBold(True)
         font.setItalic(False)
         font.setWeight(62)
@@ -227,30 +235,52 @@ class Ui_MainWindow(object):
         self.pushButton_3.setStyleSheet("")
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_6 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_6.setGeometry(QtCore.QRect(510, 10, 181, 71))
+        self.pushButton_6.setGeometry(QtCore.QRect(530, -100, 181, 71))
         font = QtGui.QFont()
         font.setFamily("Calibri")
-        font.setPointSize(-1)
+        font.setPointSize(23)
         font.setBold(True)
         font.setItalic(False)
         font.setWeight(62)
         self.pushButton_6.setFont(font)
         self.pushButton_6.setStyleSheet("")
         self.pushButton_6.setObjectName("pushButton_6")
-        self.comboBox = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox.setGeometry(QtCore.QRect(10, 10, 191, 71))
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setGeometry(QtCore.QRect(800, 370, 601, 101))
+        self.frame.setStyleSheet("background-image: url(:/label);border: 3px solid rgb(0, 210, 233);")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.horizontalWidget1 = QtWidgets.QWidget(self.centralwidget)
+        self.horizontalWidget1.setGeometry(QtCore.QRect(20, 10, 661, 80))
+        self.horizontalWidget1.setStyleSheet("QPushButton {padding:8px;} QComboBox {padding:8px;}")
+        self.horizontalWidget1.setObjectName("horizontalWidget1")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.horizontalWidget1)
+        self.horizontalLayout_3.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3.setSpacing(30)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.comboBox = QtWidgets.QComboBox(self.horizontalWidget1)
         self.comboBox.setStyleSheet("")
         self.comboBox.setEditable(False)
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.setItemText(1, "")
-        self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(50, 310, 601, 101))
-        self.frame.setStyleSheet("background-image: url(img.png);border: 3px solid rgb(0, 210, 233);")
-        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame.setObjectName("frame")
+        self.horizontalLayout_3.addWidget(self.comboBox)
+        self.pushButton_7 = QtWidgets.QPushButton(self.horizontalWidget1)
+        self.pushButton_7.setStyleSheet("font-size: 17pt; padding: 13")
+        self.pushButton_7.setObjectName("pushButton_7")
+        self.horizontalLayout_3.addWidget(self.pushButton_7)
+        self.pushButton_5 = QtWidgets.QPushButton(self.horizontalWidget1)
+        self.pushButton_5.setObjectName("pushButton_5")
+        self.horizontalLayout_3.addWidget(self.pushButton_5)
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(50, 310, 601, 101))
+        self.label.setStyleSheet("background-image: url(:/label);border: 3px solid rgb(0, 210, 233);")
+        self.label.setText("")
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -265,5 +295,8 @@ class Ui_MainWindow(object):
         self.pushButton_2.setText(_translate("MainWindow", "ТЕСТ"))
         self.pushButton_3.setText(_translate("MainWindow", "Поменять длину"))
         self.pushButton_6.setText(_translate("MainWindow", "Помощь"))
-        self.comboBox.setCurrentText(_translate("MainWindow", "Выбор COM"))
-        self.comboBox.setItemText(0, _translate("MainWindow", "Выбор COM"))
+        self.comboBox.setCurrentText(_translate("MainWindow", "COM MARK"))
+        self.comboBox.setItemText(0, _translate("MainWindow", "COM MARK"))
+        self.pushButton_7.setText(_translate("MainWindow", "ОБНОВИТЬ COM"))
+        self.pushButton_5.setText(_translate("MainWindow", "ПОМОЩЬ"))
+import img_rc
