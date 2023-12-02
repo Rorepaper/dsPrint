@@ -185,11 +185,9 @@ class DsPrint(QMainWindow, Ui_MainWindow):
         for i in a:
             if i.pid:
                 comports.append(i.name)
-        comports2 = comports[:]
         comports.append("COM MARK")
         self.comboBox.clear()
         self.comboBox.addItems(comports)
-        comports2.append("COM NIIM")
 
     def change_mode(self):
         splash = QSplashScreen(self, QPixmap('src/help.jpg'))
